@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
+
+:root {
+  --game-background-color: hsl(300, 100%, 25%);
+  --player-card-1-background: blue;
+
+  --player-card-2-background: hsl(0, 100%, 50%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--game-background-color);
+}
+
+.game-wrapper {
+  display: flex;
+}
+
+.player-section {
+  height: 55vh;
+  width: 30vw;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 2rem;
+  border-radius: 25px;
+}
+.player-1 {
+  background-color: var(--player-card-1-background);
+}
+
+.player-2 {
+  background-color: var(--player-card-2-background);
+}
+
+.player-score {
+  margin-top: 50%;
+}
