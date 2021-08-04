@@ -1,10 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@900&display=swap");
 
 :root {
-  --game-background-color: hsl(300, 100%, 25%);
-  --player-card-1-background: blue;
-
-  --player-card-2-background: hsl(0, 100%, 50%);
+  --game-font: hsla(341, 73%, 66%, 1);
+  --game-bg: hsla(240, 14%, 94%, 1);
+  --game-player-card: hsla(172, 71%, 25%, 1);
+  --game-player-card-border: hsla(165, 74%, 57%, 1);
+  --game-buttons: hsla(196, 100%, 88%, 0.5);
+  --winner-message-font: hsla(15, 87%, 32%, 1);
+  --winner-message-bg: hsla(191, 95%, 34%, 1);
+  --winner-message-border: hsla(55, 92%, 58%, 1);
+  --winner-button: hsla(199, 29%, 53%, 1);
+  --footer-bg: hsla(238, 70%, 57%, 1);
+  --footer-font: hsla(36, 80%, 67%, 1);
 }
 * {
   box-sizing: border-box;
@@ -14,29 +21,42 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  background-color: var(--game-background-color);
+  background-color: var(--game-bg);
+  color: var(--game-font);
 }
 
 .game-wrapper {
   display: flex;
+  justify-content: center;
+  margin-top: 10%;
 }
 
-.player-section {
+.player-card {
   height: 55vh;
   width: 30vw;
-  border: 1px solid black;
+  border: 5px solid black;
+  display: grid;
+  grid-auto-flow: row;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  border-radius: 25px;
+  background-color: var(--game-player-card);
+}
+.player-name,
+.player-number,
+.player-score {
   text-align: center;
-  font-size: 2rem;
+}
+
+.player-1,
+.player-2 {
   border-radius: 25px;
 }
-.player-1 {
-  background-color: var(--player-card-1-background);
-}
 
-.player-2 {
-  background-color: var(--player-card-2-background);
+.player-card.active {
+  background-color: hsla(172, 71%, 75%, 1);
 }
-
-.player-score {
-  margin-top: 50%;
+.roll-btn:hover {
+}
+.reset-btn:hover {
 }
