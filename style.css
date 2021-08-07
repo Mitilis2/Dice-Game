@@ -54,9 +54,6 @@ body {
   border-radius: 25px;
 }
 
-.player-card.active {
-  background-color: hsla(172, 71%, 75%, 1);
-}
 .roll-reset {
   display: grid;
   grid-auto-flow: row;
@@ -78,9 +75,39 @@ body {
 }
 
 .reset-btn {
-  margin-top: 23vh;
 }
 .dice-img {
   margin-left: 25%;
   max-width: 50%;
+  border-radius: 20px;
+  box-shadow: -1rem -1rem hsl(172, 75%, 75%);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--footer-bg);
+  color: var(--footer-font);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: var(--footer-font);
+}
+a:hover {
+  color: hsla(36, 80%, 27%, 1);
+}
+
+.name {
+  margin-left: -15%;
+}
+p {
+  font-size: 1.5rem;
+}
+
+.hidden {
+  display: none;
 }
