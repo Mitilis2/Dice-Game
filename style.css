@@ -69,16 +69,17 @@ body {
   border-radius: 5% 45%;
   color: var(--game-font);
 }
+.reset-btn {
+  margin-top: 75%;
+}
 .roll-btn:hover,
 .reset-btn:hover {
   background-color: hsla(196, 100%, 66%, 0.5);
 }
 
-.reset-btn {
-}
 .dice-img {
   margin-left: 25%;
-  max-width: 50%;
+  max-width: 25vh;
   border-radius: 20px;
   box-shadow: -1rem -1rem hsl(172, 75%, 75%);
 }
