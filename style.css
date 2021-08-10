@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
 :root {
   --game-font: hsla(341, 73%, 66%, 1);
@@ -59,8 +59,8 @@ body {
   grid-auto-flow: row;
   margin-top: 5%;
 }
-.roll-btn,
-.reset-btn {
+#roll-btn,
+#reset-btn {
   background-color: var(--game-buttons);
   width: 15vw;
   height: 10vh;
@@ -69,15 +69,16 @@ body {
   border-radius: 5% 45%;
   color: var(--game-font);
 }
-.reset-btn {
-  margin-top: 75%;
+#reset-btn {
+  margin-top: 25vh;
 }
-.roll-btn:hover,
-.reset-btn:hover {
+#roll-btn:hover,
+#reset-btn:hover {
   background-color: hsla(196, 100%, 66%, 0.5);
 }
 
-.dice-img {
+.dice-img-1,
+.dice-img-2 {
   margin-left: 25%;
   max-width: 25vh;
   border-radius: 20px;
