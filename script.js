@@ -8,15 +8,18 @@ const playerCardOne = document.querySelectorAll('.player-card')[0];
 const playerCardTwo = document.querySelector('.player-card-2')
 const diceImg1 = document.querySelector('.dice-img-1');
 const diceImg2 = document.querySelector('.dice-img-2');
-
-
+const winnerMessage = document.querySelector('.modal-window-container');
+const winner = document.querySelector('.winner');
+const newGameBtn = document.getElementById('new-game-btn');
 
 
 let currentScore1 = 0;
 let currentScore2 = 0;
 let playing = true;
 // initalize game
-
+function removeWinnerMessage(){
+    winnerMessage.classList.add('hidden');
+}
 
 const initial = function (){
     playing = true;
@@ -28,6 +31,7 @@ const initial = function (){
     // add modal for player name 1 & player name 2;
     diceImg1.src = "./img/dice-1.png"
     diceImg2.src = "./img/dice-2.png"
+    removeWinnerMessage();    
 }
 initial();
 
@@ -39,6 +43,9 @@ function playerTwoWins(){
 }
 // roll button functionality
 
+function addWinnerMessage(){
+    winnerMessage.classList.remove('hidden')
+}
 
 rollBtn.addEventListener('click', function(){
     if(playing){
@@ -55,9 +62,11 @@ rollBtn.addEventListener('click', function(){
     if(playerOneScore.innerHTML >= 10){
         playing = false;
         console.log('Player 1 wins!')
+        addWinnerMessage()
     } else if(playerTwoScore.innerHTML >= 10){
         playing = false;
         console.log('Player 2 wins!')
+        addWinnerMessage()
     }
     else{
         console.log('neither player reached the target score')
@@ -65,18 +74,24 @@ rollBtn.addEventListener('click', function(){
     if(playerOneScore.innerHTML >= 10 && playerTwoScore.innerHTML < 10){
             playing =  false;
             console.log('Player 1 beat Player 2')
+            addWinnerMessage()
+            winner.innerHTML = "PLAYER 1 IS THE WINNER";
         } else if(playerTwoScore.innerHTML >= 10 && playerOneScore.innerHTML < 10) {
             playing =  false;
             console.log('Player 2 beat Player 1')
+            addWinnerMessage()
+            winner.innerHTML = "PLAYER 2 IS THE WINNER"
         } else if(playerOneScore.innerHTML >= 10 && playerTwoScore.innerHTML >= 10){
            if(playerOneScore.innerHTML > playerTwoScore.innerHTML){
                console.log('Player 1 has higher score')
+               addWinnerMessage()
+               winner.innerHTML = "PLAYER 1 IS THE WINNER";
            } else if(playerTwoScore.innerHTML > playerOneScore.innerHTML){
             console.log('Player 2 has higher score')
-           }else {
-                console.log('No winner')
-            }
+            addWinnerMessage()
+            winner.innerHTML = "PLAYER 2 IS THE WINNER"
            }
+            }
         });
 
 
@@ -85,3 +100,4 @@ resetBtn.addEventListener('click', function(){
  initial()
 });
 
+newGameBtn.addEventListener('click', initial)

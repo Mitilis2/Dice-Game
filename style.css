@@ -29,6 +29,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 5%;
+  z-index: 1;
 }
 
 .player-card {
@@ -113,3 +114,29 @@ p {
 .hidden {
   display: none;
 }
+.modal-window-container {
+  position: absolute;
+  padding: 3rem;
+  top: 35%;
+  left: 35%;
+  border: 3px solid var(--winner-message-border);
+  color: var(--winner-message-font);
+  background-color: var(--winner-message-bg);
+  border-radius: 25px;
+  z-index: 3;
+}
+.new-game-btn {
+  font-size: 2rem;
+  padding: 1rem;
+  color: var(--winner-message-font);
+  background-color: var(--winner-button);
+  margin: 5% 0 0 25%;
+  border-radius: 5% 45%;
+}
+/* .winner-wrapper {
+  width: 100%;
+  height: 95vh;
+  border: 10px solid black;
+  opacity: 0.5;
+  z-index: 2;
+} */
