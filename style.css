@@ -125,13 +125,14 @@ p {
   border-radius: 25px;
   z-index: 3;
 }
-.new-game-btn {
-  font-size: 2rem;
+#new-game-btn {
+  font-size: 1.5rem;
   padding: 1rem;
   color: var(--winner-message-font);
   background-color: var(--winner-button);
   margin: 5% 0 0 25%;
   border-radius: 5% 45%;
+  border: 1px solid black;
 }
 /* .winner-wrapper {
   width: 100%;

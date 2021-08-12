@@ -37,8 +37,8 @@ const initial = function (){
     currentScore2 = 0;
         // hide winner message and modals
     // add modal for player name 1 & player name 2;
-    diceImg1.src = "./img/dice-1.png"
-    diceImg2.src = "./img/dice-2.png"
+    diceImg1.src = "img/dice-1.png"
+    diceImg2.src = "img/dice-2.png"
     removeWinnerMessage();  
     playerCardOne.classList.remove('blur')
     playerCardTwo.classList.remove('blur')
@@ -64,9 +64,9 @@ function addWinnerMessage(){
 rollBtn.addEventListener('click', function(){
     if(playing){
     const dice = Math.trunc(Math.random() * 6) + 1
-    diceImg1.src = `./img/dice-${dice}.png` 
+    diceImg1.src = `img/dice-${dice}.png` 
     const dice2 = Math.trunc(Math.random() * 6) + 1
-    diceImg2.src = `./img/dice-${dice2}.png`;
+    diceImg2.src = `img/dice-${dice2}.png`;
     currentScore1 += dice;
     currentScore2 += dice2;
     playerOneScore.innerHTML = currentScore1;
