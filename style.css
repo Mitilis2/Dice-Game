@@ -140,3 +140,6 @@ p {
   opacity: 0.5;
   z-index: 2;
 } */
+.blur {
+  filter: blur(2px);
+}

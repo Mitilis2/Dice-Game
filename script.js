@@ -13,14 +13,22 @@ const winner = document.querySelector('.winner');
 const newGameBtn = document.getElementById('new-game-btn');
 
 
+
 let currentScore1 = 0;
 let currentScore2 = 0;
 let playing = true;
-// initalize game
+function addBlur(){
+    playerCardOne.classList.add('blur')
+    playerCardTwo.classList.add('blur')
+    rollBtn.classList.add('blur')
+    resetBtn.classList.add('blur')
+}
+
 function removeWinnerMessage(){
     winnerMessage.classList.add('hidden');
 }
 
+// initalize game
 const initial = function (){
     playing = true;
     playerOneScore.innerHTML = 0;
@@ -31,16 +39,22 @@ const initial = function (){
     // add modal for player name 1 & player name 2;
     diceImg1.src = "./img/dice-1.png"
     diceImg2.src = "./img/dice-2.png"
-    removeWinnerMessage();    
+    removeWinnerMessage();  
+    playerCardOne.classList.remove('blur')
+    playerCardTwo.classList.remove('blur')
+    rollBtn.classList.remove('blur')
+    resetBtn.classList.remove('blur')  
 }
 initial();
 
-function playerOneWins(){
 
-}
-function playerTwoWins(){
 
-}
+// function playerOneWins(){
+
+// }
+// function playerTwoWins(){
+
+// }
 // roll button functionality
 
 function addWinnerMessage(){
@@ -63,10 +77,12 @@ rollBtn.addEventListener('click', function(){
         playing = false;
         console.log('Player 1 wins!')
         addWinnerMessage()
+        addBlur()
     } else if(playerTwoScore.innerHTML >= 10){
         playing = false;
         console.log('Player 2 wins!')
         addWinnerMessage()
+        addBlur()
     }
     else{
         console.log('neither player reached the target score')
@@ -75,20 +91,24 @@ rollBtn.addEventListener('click', function(){
             playing =  false;
             console.log('Player 1 beat Player 2')
             addWinnerMessage()
+            addBlur()
             winner.innerHTML = "PLAYER 1 IS THE WINNER";
         } else if(playerTwoScore.innerHTML >= 10 && playerOneScore.innerHTML < 10) {
             playing =  false;
             console.log('Player 2 beat Player 1')
             addWinnerMessage()
+            addBlur()
             winner.innerHTML = "PLAYER 2 IS THE WINNER"
         } else if(playerOneScore.innerHTML >= 10 && playerTwoScore.innerHTML >= 10){
            if(playerOneScore.innerHTML > playerTwoScore.innerHTML){
                console.log('Player 1 has higher score')
                addWinnerMessage()
+               addBlur()
                winner.innerHTML = "PLAYER 1 IS THE WINNER";
            } else if(playerTwoScore.innerHTML > playerOneScore.innerHTML){
             console.log('Player 2 has higher score')
             addWinnerMessage()
+            addBlur()
             winner.innerHTML = "PLAYER 2 IS THE WINNER"
            }
             }
