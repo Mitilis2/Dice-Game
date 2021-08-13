@@ -110,6 +110,9 @@ rollBtn.addEventListener('click', function(){
             addWinnerMessage()
             addBlur()
             winner.innerHTML = "PLAYER 2 IS THE WINNER"
+           } else if(playerOneScore.innerHTML = playerTwoScore.innerHTML){
+                addWinnerMessage()
+                winnerMessage.innerHTML = "THE GAME IS A TIE"
            }
             }
         });
